@@ -31,5 +31,32 @@ public class Player {
         martialStrategies.get(randomIndex).attack(player);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<MartialArt> getMartialStrategies() {
+        return martialStrategies;
+    }
+
+    public void setMartialStrategies(ArrayList<MartialArt> martialStrategies) {
+        if(martialStrategies.size() > 3){
+            System.out.println("You can only have 3 martial arts");
+        } else {
+            this.martialStrategies = martialStrategies;
+        }
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }
 
