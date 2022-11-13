@@ -2,12 +2,35 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes />
+  <nodes>
+    <node x="-98.0" y="192.5">Clasess.player</node>
+    <node x="-117.5" y="123.5">Clasess.martial_arts</node>
+    <node x="-42.5" y="252.5">org.example.Main</node>
+    <node x="-102.5" y="52.5">Clasess.loggers</node>
+    <node x="187.0" y="52.5">Interfaces.Strategy</node>
+    <node x="-49.5" y="-15.5">Interfaces.Logger</node>
+    <node x="181.0" y="172.5">AbstractClasses.MartialArt</node>
+    <node x="155.5" y="292.5">Factories.MartialArtFactory</node>
+  </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="false" x="0.0" y="0.0" />
-  <SelectedNodes />
+  <edges>
+    <edge source="AbstractClasses.MartialArt" target="Interfaces.Strategy" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="Factories.MartialArtFactory" target="AbstractClasses.MartialArt" relationship="TO_MANY">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.2000000000000002" showDependencies="true" x="50.5" y="135.5" />
+  <SelectedNodes>
+    <node>Clasess.martial_arts</node>
+    <node>Clasess.loggers</node>
+    <node>Clasess.player</node>
+  </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
 </Diagram>
 
