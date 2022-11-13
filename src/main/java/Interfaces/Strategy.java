@@ -2,6 +2,9 @@ package Interfaces;
 
 import Clasess.player.Player;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public interface Strategy {
-    void attack(Player player);
+    HashMap<String, ArrayList<String>> attack();
 }

@@ -18,24 +18,40 @@ public abstract class MartialArt implements Strategy {
 
     // Se le pasa el player para que pueda bajarle la vida
     @Override
-    public void attack(Player player){
+    public HashMap<String, ArrayList<String>> attack(){
         // random int between 3 and 6
-        int move = (int) ( Math.random() * (6 - 3 + 1)) + 3;
 
+        HashMap<String, ArrayList<String>> effects = new HashMap<>();
+
+        int move = (int) ( Math.random() * (6 - 3 + 1)) + 3;
+        System.out.println(move);
         for(int i = 0; i < move; i++){
             int randomMove = (int) ( Math.random() * (3 - 1 + 1)) + 1;
             switch (randomMove) {
                 case 1 -> {
-                    this.move1();
-                    System.out.println(moves.get(1));
+
+                    if(effects.get(moves.get(1)) == null){
+                        effects.put(moves.get(1), move1());
+                    } else {
+                        effects.get(moves.get(1)).addAll(move1());
+                    }
+
                 }
                 case 2 -> {
-                    this.move2();
-                    System.out.println(moves.get(2));
+                    if(effects.get(moves.get(2)) == null){
+                        effects.put(moves.get(2), move2());
+                    } else {
+                        effects.get(moves.get(2)).addAll(move2());
+                    }
+
                 }
                 case 3 -> {
-                    this.move3();
-                    System.out.println(moves.get(3));
+                    if(effects.get(moves.get(3)) == null){
+                        effects.put(moves.get(3), move3());
+                    } else {
+                        effects.get(moves.get(3)).addAll(move3());
+                    }
+
                 }
                 default -> {
                     System.out.println("Something went wrong");
@@ -44,12 +60,17 @@ public abstract class MartialArt implements Strategy {
 
 
         }
+        return effects;
 
     };
 
+    public String getMoveName(int moveNumber){
+        return moves.get(moveNumber);
+    }
 
-    public abstract void move1();
-    public abstract void move2();
-    public abstract void move3();
+
+    public abstract ArrayList<String> move1();
+    public abstract ArrayList<String> move2();
+    public abstract ArrayList<String> move3();
 }
 

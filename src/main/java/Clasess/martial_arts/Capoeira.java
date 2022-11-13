@@ -11,18 +11,32 @@ public class Capoeira extends MartialArt {
     }
 
     @Override
-    public void move1() {
+    public ArrayList<String> move1() {
+        ArrayList<String> effects = new ArrayList<>();
 
+        effects.add("-28");
+        effects.add("+10");
+
+        return effects;
     }
 
     @Override
-    public void move2() {
+    public ArrayList<String> move2() {
+        ArrayList<String> effects = new ArrayList<>();
 
+        effects.add("-10");
+
+        return effects;
     }
 
     @Override
-    public void move3() {
+    public ArrayList<String> move3() {
+        ArrayList<String> effects = new ArrayList<>();
 
+        effects.add("-25");
+
+        return effects;
     }
+
 
 }
