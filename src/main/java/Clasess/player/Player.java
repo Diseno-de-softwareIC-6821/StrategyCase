@@ -55,6 +55,7 @@ public class Player {
 
     public void randomAttack(Player player){
         int randomIndex = (int) (Math.random() * (2 + 1));
+        System.out.println(this.martialStrategies.get(randomIndex).getClass().getSimpleName());
         martialStrategies.get(randomIndex).attack().forEach((key, value) -> {
 
             int totalDamage = 0;

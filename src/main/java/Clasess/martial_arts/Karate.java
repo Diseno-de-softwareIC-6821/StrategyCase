@@ -34,7 +34,7 @@ public class Karate extends MartialArt {
             effects.add("+10");
         }
 
-        return null;
+        return effects;
     }
 
 
