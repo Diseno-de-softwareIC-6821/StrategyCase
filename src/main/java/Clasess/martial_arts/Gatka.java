@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Gatka extends MartialArt {
     public Gatka(ArrayList<String> moveNames) {
-        super(moveNames);
+        super(moveNames,"Gatka");
     }
 
     @Override

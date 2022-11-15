@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class TaiChi extends MartialArt {
     public TaiChi(ArrayList<String> moveNames){
-        super(moveNames);
+        super(moveNames,"TaiChi");
     }
 
     @Override

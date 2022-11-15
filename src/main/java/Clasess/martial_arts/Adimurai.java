@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Adimurai extends MartialArt {
     public Adimurai(ArrayList<String> moveNames){
-        super(moveNames);
+        super(moveNames,"Adimurai");
     }
 
     @Override

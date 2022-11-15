@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class KravMaga extends MartialArt {
 
     public KravMaga(ArrayList<String> moveNames){
-        super(moveNames);
+        super(moveNames,"KravMaga");
     }
 
     @Override

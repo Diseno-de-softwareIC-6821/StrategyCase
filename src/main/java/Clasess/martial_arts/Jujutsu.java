@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Jujutsu extends MartialArt {
 
     public Jujutsu(ArrayList<String> moveNames){
-        super(moveNames);
+        super(moveNames,"Jujutsu");
     }
 
     @Override

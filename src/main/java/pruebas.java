@@ -11,7 +11,9 @@ public class pruebas {
     
     public static void main(String[] args){
         Principal pruebaframe = new Principal();
+        
         pruebaframe.setVisible(true);
+        pruebaframe.setSize(5000,5000);
         
         
     }

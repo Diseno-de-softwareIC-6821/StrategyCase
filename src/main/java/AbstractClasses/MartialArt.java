@@ -7,13 +7,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class MartialArt implements Strategy {
+    String name;
 
     HashMap<Integer, String> moves = new HashMap<>();
 
-    public MartialArt(ArrayList<String> moveNames){
+    public MartialArt(ArrayList<String> moveNames, String name_){
         for (int i = 0; i < moveNames.size(); i++) {
             moves.put(i+1, moveNames.get(i));
+        this.name = name_;
         }
+    }
+
+    public String getName() {
+        return name;
     }
 
     // Se le pasa el player para que pueda bajarle la vida
