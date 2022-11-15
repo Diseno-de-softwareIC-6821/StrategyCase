@@ -1,20 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 
-/**
- *
- * @author maxim
- */
-public class Main extends javax.swing.JPanel {
+import AbstractClasses.MartialArt;
+import Clasess.loggers.MemoryLogger;
+import Clasess.player.Player;
+import java.util.ArrayList;
 
-    /**
-     * Creates new form Main
-     */
-    public Main() {
+
+public class Principal extends javax.swing.JPanel {
+
+   MemoryLogger MemoryJ1;
+   MemoryLogger MemoryJ2;
+   ArrayList<MartialArt> martialStrategiesJ1;
+   ArrayList<MartialArt> martialStrategiesJ2;
+   Player J1;
+   Player J2;
+   
+    public Principal() {
+        
         initComponents();
         
+        MemoryLogger MemoryJ1 = new MemoryLogger();
+        MemoryLogger MemoryJ2 = new MemoryLogger();
+        
+        ArrayList<MartialArt> martialStrategiesJ1 = new ArrayList<>();
+        ArrayList<MartialArt> martialStrategiesJ2 = new ArrayList<>();
+                
+        Player J1 = new Player("Jugador 1",martialStrategiesJ1,200,MemoryJ1);
+        Player J2 = new Player("Jugador 2",martialStrategiesJ2,200,MemoryJ2);
+        
+        J1.printStrategies();
+        J2.printStrategies();
     }
 
     /**
@@ -474,6 +488,6 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     // End of variables declaration//GEN-END:variables
-
-
+    
+    
 }
