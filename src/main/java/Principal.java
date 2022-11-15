@@ -2,33 +2,44 @@
 import AbstractClasses.MartialArt;
 import Clasess.loggers.MemoryLogger;
 import Clasess.player.Player;
+import Factories.MartialArtFactory;
+import static com.sun.source.util.DocTrees.instance;
 import java.util.ArrayList;
 
 
 public class Principal extends javax.swing.JPanel {
 
-   MemoryLogger MemoryJ1;
-   MemoryLogger MemoryJ2;
-   ArrayList<MartialArt> martialStrategiesJ1;
-   ArrayList<MartialArt> martialStrategiesJ2;
-   Player J1;
-   Player J2;
-   
+    ArrayList<MartialArt> martialStrategies;
+    MemoryLogger logger;
+    Player player1;
+    Player player2;
+
     public Principal() {
         
-        initComponents();
+        initComponents();    
+        ArrayList<MartialArt> martialStrategies = new ArrayList<>();
         
-        MemoryLogger MemoryJ1 = new MemoryLogger();
-        MemoryLogger MemoryJ2 = new MemoryLogger();
+        MemoryLogger logger = new MemoryLogger();
+
+        Player player1 = new Player.PlayerBuilder()
+                .setName("John")
+                .setMartialArts(MartialArtFactory.getMartialArts())
+                .setHealth(200)
+                .setLoggerService(logger)
+                .build();
+
+        Player player2 = new Player.PlayerBuilder()
+                .setName("Ethan")
+                .setMartialArts(MartialArtFactory.getMartialArts())
+                .setHealth(200)
+                .setLoggerService(logger)
+                .build();
+
+        player1.attack(player2, 1);
+        player2.randomAttack(player1);
         
-        ArrayList<MartialArt> martialStrategiesJ1 = new ArrayList<>();
-        ArrayList<MartialArt> martialStrategiesJ2 = new ArrayList<>();
-                
-        Player J1 = new Player("Jugador 1",martialStrategiesJ1,200,MemoryJ1);
-        Player J2 = new Player("Jugador 2",martialStrategiesJ2,200,MemoryJ2);
-        
-        J1.printStrategies();
-        J2.printStrategies();
+        //MemoryLogger Memory = new MemoryLogger();
+        //Player p1 = new Player.PlayerBuilder().setName("player").setMartialArts(martialStrategies).setLoggerService(Memory).build();
     }
 
     /**
