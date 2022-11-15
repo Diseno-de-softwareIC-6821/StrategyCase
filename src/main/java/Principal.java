@@ -77,8 +77,6 @@ public class Principal extends javax.swing.JPanel {
         Movimientos2_J2 = new javax.swing.JTextArea();
         jScrollPane12 = new javax.swing.JScrollPane();
         Movimientos3_J2 = new javax.swing.JTextArea();
-        ElegirAM_J1 = new javax.swing.JComboBox<>();
-        ElegirAM_J2 = new javax.swing.JComboBox<>();
         ImagenAM_J1 = new javax.swing.JPanel();
         Ataque_J1 = new javax.swing.JButton();
         Ataque_J2 = new javax.swing.JButton();
@@ -102,6 +100,8 @@ public class Principal extends javax.swing.JPanel {
         AsignarJ2 = new javax.swing.JButton();
         AtacarseButton1 = new javax.swing.JButton();
         AsignarJ1 = new javax.swing.JButton();
+        SeleccionarAM_J1 = new javax.swing.JButton();
+        SeleccionarAM_J2 = new javax.swing.JButton();
 
         ArteMarcialName1_J1.setColumns(20);
         ArteMarcialName1_J1.setRows(5);
@@ -156,10 +156,6 @@ public class Principal extends javax.swing.JPanel {
         Movimientos3_J2.setColumns(20);
         Movimientos3_J2.setRows(5);
         jScrollPane12.setViewportView(Movimientos3_J2);
-
-        ElegirAM_J1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        ElegirAM_J2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         ImagenAM_J1.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -254,6 +250,20 @@ public class Principal extends javax.swing.JPanel {
             }
         });
 
+        SeleccionarAM_J1.setText("Seleccionar Arte Marcial");
+        SeleccionarAM_J1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeleccionarAM_J1ActionPerformed(evt);
+            }
+        });
+
+        SeleccionarAM_J2.setText("Seleccionar Arte Marcial");
+        SeleccionarAM_J2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeleccionarAM_J2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -283,16 +293,16 @@ public class Principal extends javax.swing.JPanel {
                                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ElegirAM_J1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(GeneradorCombo_J1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(34, 34, 34)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(VidaYGolpes_J1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                            .addComponent(Ataque_J1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(Ataque_J1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(SeleccionarAM_J1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(GeneradorCombo_J1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addGap(18, 18, 18)
                                 .addComponent(ImagenAM_J3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -310,6 +320,12 @@ public class Principal extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(95, 95, 95)
                                 .addComponent(J2label, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -318,14 +334,9 @@ public class Principal extends javax.swing.JPanel {
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SeleccionarAM_J2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,7 +346,6 @@ public class Principal extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(GeneradorCombo_J2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ElegirAM_J2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Ataque_J2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(VidaYGolpes_J2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
@@ -390,13 +400,12 @@ public class Principal extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(ElegirAM_J1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(GeneradorCombo_J1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(GeneradorCombo_J2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(ElegirAM_J2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(SeleccionarAM_J1)
+                                            .addComponent(SeleccionarAM_J2))
+                                        .addGap(17, 17, 17)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(GeneradorCombo_J1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(GeneradorCombo_J2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(Ataque_J1)
@@ -445,6 +454,14 @@ public class Principal extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_AsignarJ1ActionPerformed
 
+    private void SeleccionarAM_J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarAM_J1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SeleccionarAM_J1ActionPerformed
+
+    private void SeleccionarAM_J2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarAM_J2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SeleccionarAM_J2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea ArteMarcialName1_J1;
@@ -460,8 +477,6 @@ public class Principal extends javax.swing.JPanel {
     private javax.swing.JButton Ataque_J2;
     private javax.swing.JTextArea DescripcionAM_J1;
     private javax.swing.JTextArea DescripcionAM_J2;
-    private javax.swing.JComboBox<String> ElegirAM_J1;
-    private javax.swing.JComboBox<String> ElegirAM_J2;
     private javax.swing.JToggleButton GeneradorCombo_J1;
     private javax.swing.JToggleButton GeneradorCombo_J2;
     private javax.swing.JPanel ImagenAM_J1;
@@ -476,6 +491,8 @@ public class Principal extends javax.swing.JPanel {
     private javax.swing.JTextArea Movimientos2_J2;
     private javax.swing.JTextArea Movimientos3_J1;
     private javax.swing.JTextArea Movimientos3_J2;
+    private javax.swing.JButton SeleccionarAM_J1;
+    private javax.swing.JButton SeleccionarAM_J2;
     private javax.swing.JButton VidaYGolpes_J1;
     private javax.swing.JButton VidaYGolpes_J2;
     private javax.swing.JTextArea Vida_J1;
