@@ -91,6 +91,15 @@ public class Player {
         return martialStrategies;
     }
 
+    public MartialArt getMartialStrategy(int index) {
+        try {
+            return martialStrategies.get(index);
+        } catch (Exception e) {
+            System.out.println("Invalid index");
+            return null;
+        }
+    }
+
     public void setMartialStrategies(ArrayList<MartialArt> martialStrategies) {
         if(martialStrategies.size() > 3){
             System.out.println("You can only have 3 martial arts");

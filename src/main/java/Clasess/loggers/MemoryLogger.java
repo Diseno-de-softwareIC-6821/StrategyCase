@@ -19,6 +19,10 @@ public class MemoryLogger implements Logger {
         this.log.add(logMessage);
     }
 
+    public String getLastLog(){
+        return this.log.get(this.log.size() - 1);
+    }
+
     @Override
     public void printLogs() {
         for (String log : log) {
